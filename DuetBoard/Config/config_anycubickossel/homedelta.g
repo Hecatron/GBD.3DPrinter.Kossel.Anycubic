@@ -14,8 +14,8 @@ G1 S1 X10 F200
 G1 S1 Y10 F200
 G1 S1 Z10 F200
 
+; For G30 leveling to work, we need to leave the position at where the end stops trigger
 ;G1 S1 X10 Y10 Z10 F200    ; move all towers up once more (second pass)
-
-G1 Z-5 F200              ; move down a few mm so that the nozzle can be centred
+;G1 Z-5 F200              ; move down a few mm so that the nozzle can be centred
 G90                       ; absolute positioning
-G1 X0 Y0 F200            ; move X+Y to the centre
+;G1 X0 Y0 F200            ; move X+Y to the centre

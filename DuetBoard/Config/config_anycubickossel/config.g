@@ -13,7 +13,7 @@ M666 X0 Y0 Z0                                        ; Put your endstop adjustme
 ; Network
 M111 S0                                              ; Debug off
 M550 PAnycubic1                                      ; Set machine name
-M587 S"******" P"********************" ; Configure access point.
+M587 S"************" P"**************"               ; Configure access point.
 M552 S1                                              ; Enable network
 M586 P0 S1                                           ; Enable HTTP
 M586 P1 S0                                           ; Disable FTP
@@ -43,14 +43,14 @@ M208 Z0 S1                                           ; Set minimum Z
 M574 X2 Y2 Z2 S1                                     ; Set active high endstops
 
 ; Probe v1 (broken) = 16.2, (good) = 19.0 (inverted)
-; Probe v2 (good)   = 16.8
+; Probe v2 (good)   = 16.695
 
 ; Z-Probe
 ;M558 P4 R0.4 H3 F300 T3000 I1                         ; Use E0 end stop for probe - Probe V1
-M558 P4 R0.4 H3 F300 T3000                            ; Use E0 end stop for probe - Probe V2
+M558 P4 R0.4 H3 F300 T1000                            ; Use E0 end stop for probe - Probe V2
 
 ;G31 P100 X0 Y0 Z16.2                                 ; Set Z probe trigger value, offset and trigger height - Probe V1
-G31 P100 X0 Y0 Z16.6                                 ; Set Z probe trigger value, offset and trigger height - Probe V2
+G31 P100 X0 Y0 Z16.695                                ; Set Z probe trigger value, offset and trigger height - Probe V2
 M557 R110 S20                                        ; Define mesh grid
 
 ; Heaters
@@ -90,3 +90,7 @@ M501
 
 ; Load G29 bed leveling file
 G29 S1
+
+; Note with my current bed a ultrabase, the delta height should be around
+; M665 H290.156
+; within config-override after a auto calibration / M500 save

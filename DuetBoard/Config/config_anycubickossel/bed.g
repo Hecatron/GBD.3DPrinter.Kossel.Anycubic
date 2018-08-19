@@ -5,14 +5,11 @@ M561 ; clear any bed transform
 G28  ; home all towers
 
 ; Heat bed first
-;M190 S60
+M190 S60
 
 ; Move down a bit first since the Z probe speed on Z is a bit slow
 G90
 G1 Z120
-
-; Set the Z0 point using G30 and the probe
-G30
 
 ; Probe the bed at 10 peripheral and 6 halfway points, and perform 7-factor auto compensation
 ; Before running this, you should have set up your Z-probe trigger height to suit your build, in the G31 command in config.g.
@@ -33,8 +30,7 @@ G30 P12 X47.54 Y-27.45 H0 Z-99999
 G30 P13 X0 Y-54.9 H0 Z-99999
 G30 P14 X-47.54 Y-27.45 H0 Z-99999
 G30 P15 X-47.54 Y27.45 H0 Z-99999
-;G30 P16 X0 Y0 H0 Z-99999 S9
-G30 P16 X0 Y0 H0 Z-99999 S6
+G30 P16 X0 Y0 H0 Z-99999 S8
 
 ; Use S-1 for measurements only, without calculations.
 ; Use S4 for endstop heights and Z-height only.
@@ -44,7 +40,10 @@ G30 P16 X0 Y0 H0 Z-99999 S6
 
 
 ; Map the bed with a grid of points
-;G29
+G29
 
 ; Cool bed
-;M190 S0
+M190 S0
+
+; Save Settings
+M500
