@@ -48,5 +48,3 @@ In short
   * use a bed temp of 50 to avoid warping (this is a big one)
   * try to avoid non rounded corners in the model if warping is a problem
 
-TODO
-set heated bed for calibration back to 60
